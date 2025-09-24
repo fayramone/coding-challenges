@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/fayzukhanov/Projects/LeetCode/20250813",
+      "program": "/Users/fayzukhanov/Projects/LeetCode/20250813/build/Debug/outDebug"
+    }
+  ]
+}
