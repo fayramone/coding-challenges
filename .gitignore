@@ -39,3 +39,33 @@
 
 # debug information files
 *.dwo
+Debug/
+
+# build
+build/
+
+# macos
+build/
+bin/
+dist/
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.Spotlight-V100
+.Trashes
+.fseventsd
+.vscode/
+
+# CLion
+cmake-build-*/
+*.cmake
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# json, xml
+*.json
+*.xml
