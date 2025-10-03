@@ -12,23 +12,34 @@
 #include <vector>
 #include <map>
 
-const std::map<char, std::vector<char>> buttons = {
-    {'2', { 'a', 'b', 'c' }}, 
-    {'3', { 'd', 'e', 'f' }}, 
-    {'4', { 'g', 'h', 'i' }}, 
-    {'5', { 'j', 'k', 'l' }}, 
-    {'6', { 'm', 'n', 'o' }}, 
-    {'7', { 'p', 'q', 'r', 's' }}, 
-    {'8', { 't', 'u', 'v' }}, 
-    {'9', { 'w', 'x', 'y', 'z' }}
-};
-
-
 class Solution {
 public:
+    const std::map<char, std::vector<char>> buttons = {
+        {'2', { 'a', 'b', 'c' }}, 
+        {'3', { 'd', 'e', 'f' }}, 
+        {'4', { 'g', 'h', 'i' }}, 
+        {'5', { 'j', 'k', 'l' }}, 
+        {'6', { 'm', 'n', 'o' }}, 
+        {'7', { 'p', 'q', 'r', 's' }}, 
+        {'8', { 't', 'u', 'v' }}, 
+        {'9', { 'w', 'x', 'y', 'z' }}
+    };
+
     std::vector<std::string> letterCombinations(std::string digits) {
-        std::vector<std::string> result;
-        // todo
+        if (digits.empty()) return {};
+
+        std::vector<std::string> result = {""};
+
+        for (const auto& d : digits) {
+            std::vector<std::string> temp;
+            for (const std::string& prefix : result) {
+                for (char c : buttons.at(d)) {
+                    temp.push_back(prefix + c);
+                }
+            }
+            result = std::move(temp);
+        }
+        
         return result;
     }
 };
